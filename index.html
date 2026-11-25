@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101322" />
+    <meta name="description" content="Play Snake and Tic-Tac-Toe in your browser, on desktop or mobile." />
+    <title>Basic Games</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="games.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#home" aria-label="Basic Games home"><span class="brand-icon">✦</span> Basic Games</a>
+        <span class="header-note">Little games, big fun</span>
+      </header>
+
+      <section class="hero" id="home">
+        <p class="eyebrow">A tiny arcade for everyone</p>
+        <h1>Pick a game.<br /><span>Make it a good one.</span></h1>
+        <p class="hero-copy">Two classics, ready to play on your computer or phone.</p>
+      </section>
+
+      <nav class="game-picker" aria-label="Choose a game">
+        <button class="game-tab active" data-game="snake" type="button"><span aria-hidden="true">🐍</span> Snake</button>
+        <button class="game-tab" data-game="tictactoe" type="button"><span aria-hidden="true">⭕</span> Tic-Tac-Toe</button>
+      </nav>
+
+      <section class="game-panel" id="snake-panel" aria-labelledby="snake-title">
+        <div class="game-heading">
+          <div><p class="eyebrow">Classic arcade</p><h2 id="snake-title">Snake</h2></div>
+          <div class="score-box"><span>Score</span><strong id="snake-score">0</strong></div>
+        </div>
+        <p class="game-hint" id="snake-status" aria-live="polite">Press Play to start. Use arrow keys, WASD, or the controls below.</p>
+        <div class="snake-board-wrap">
+          <canvas id="snake-board" width="400" height="400" aria-label="Snake game board"></canvas>
+          <div class="board-overlay" id="snake-overlay"><span class="overlay-icon">🐍</span><strong>Ready when you are</strong><button class="primary-button" id="snake-start" type="button">Play Snake</button></div>
+        </div>
+        <div class="snake-actions">
+          <button class="primary-button" id="snake-restart" type="button">Restart</button>
+          <span class="control-tip">Desktop: arrows / WASD &nbsp;·&nbsp; Phone: swipe or tap</span>
+        </div>
+        <div class="dpad" aria-label="Snake touch controls">
+          <button class="dpad-up" data-direction="up" aria-label="Move up" type="button">▲</button>
+          <button class="dpad-left" data-direction="left" aria-label="Move left" type="button">◀</button>
+          <button class="dpad-down" data-direction="down" aria-label="Move down" type="button">▼</button>
+          <button class="dpad-right" data-direction="right" aria-label="Move right" type="button">▶</button>
+        </div>
+      </section>
+
+      <section class="game-panel hidden" id="tictactoe-panel" aria-labelledby="ttt-title" hidden>
+        <div class="game-heading">
+          <div><p class="eyebrow">A friendly face-off</p><h2 id="ttt-title">Tic-Tac-Toe</h2></div>
+          <div class="score-box ttt-score"><span>Wins</span><strong><i id="x-wins">0</i> <b>–</b> <i id="o-wins">0</i></strong></div>
+        </div>
+        <p class="game-hint" id="ttt-status" aria-live="polite">X goes first. Take turns with a friend!</p>
+        <div class="ttt-board" role="group" aria-label="Tic-Tac-Toe board">
+          <button class="ttt-cell" type="button" data-cell="0" aria-label="Empty square 1"></button>
+          <button class="ttt-cell" type="button" data-cell="1" aria-label="Empty square 2"></button>
+          <button class="ttt-cell" type="button" data-cell="2" aria-label="Empty square 3"></button>
+          <button class="ttt-cell" type="button" data-cell="3" aria-label="Empty square 4"></button>
+          <button class="ttt-cell" type="button" data-cell="4" aria-label="Empty square 5"></button>
+          <button class="ttt-cell" type="button" data-cell="5" aria-label="Empty square 6"></button>
+          <button class="ttt-cell" type="button" data-cell="6" aria-label="Empty square 7"></button>
+          <button class="ttt-cell" type="button" data-cell="7" aria-label="Empty square 8"></button>
+          <button class="ttt-cell" type="button" data-cell="8" aria-label="Empty square 9"></button>
+        </div>
+        <div class="center-action"><button class="primary-button" id="ttt-reset" type="button">New round</button><button class="text-button" id="ttt-score-reset" type="button">Reset score</button></div>
+      </section>
+
+      <footer><span>Made for quick breaks and friendly matches.</span><a href="https://github.com/dhameeprsant1590-lang/basic-games">View on GitHub ↗</a></footer>
+    </main>
+  </body>
+  </html>
+                                     
